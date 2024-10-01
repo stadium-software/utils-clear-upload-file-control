@@ -29,7 +29,7 @@ if (control.length > 1) {
     console.error("The classname '" + uploadFileControlClass + "' is assigned to multiple controls on this page");
     return false;
 } else if (control.length == 0) {
-    console.error("The classname '" + uploadFileControlClass + "' is not assigned toany control on this page");
+    console.error("The classname '" + uploadFileControlClass + "' is not assigned to any control on this page");
     return false;
 }
 control = control[0];
