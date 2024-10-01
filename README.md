@@ -7,6 +7,8 @@ The *UploadFile* control is missing a property to clear the uploaded files progr
 # Version
 Initial 1.0
 
+1.1 Added a check for the uniqueness of the assigned classname on the page
+
 # Setup
 
 ## Application Setup
@@ -19,10 +21,18 @@ Initial 1.0
 3. Drag a *JavaScript* action into the script
 4. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script v1.0 https://github.com/stadium-software/utils-clear-upload-file-control */
+/* Stadium Script v1.1 https://github.com/stadium-software/utils-clear-upload-file-control */
 let scope = this;
 let uploadFileControlClass = ~.Parameters.Input.UploadFileControlClass;
-let control = document.querySelector("." + uploadFileControlClass);
+let control = document.querySelectorAll("." + uploadFileControlClass);
+if (control.length > 1) {
+    console.error("The classname '" + uploadFileControlClass + "' is assigned to multiple controls on this page");
+    return false;
+} else if (control.length == 0) {
+    console.error("The classname '" + uploadFileControlClass + "' is not assigned toany control on this page");
+    return false;
+}
+control = control[0];
 let getObjectName = (obj) => {
     let objname = obj.id.replace("-container", "");
     do {
