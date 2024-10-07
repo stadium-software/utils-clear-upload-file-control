@@ -5,9 +5,11 @@ There is no way to clear uploaded files from a *UploadFile* control programatica
 ![](images/view.gif)
 
 # Version
-Initial 1.0
+1.2
 
 1.1 Added a check for the uniqueness of the assigned classname on the page
+
+1.2 Bug fix: control was hanging onto old files
 
 # Setup
 
@@ -42,9 +44,9 @@ let getObjectName = (obj) => {
     return objname;
 };
 setDMValues(control, "Files", []);
-let containers = control.querySelectorAll(".single-file-upload-container");
+let containers = control.querySelectorAll(".single-file-upload-delete-icon");
 for (let i = 0; i < containers.length; i++) {
-    containers[i].remove();
+    containers[i].click();
 }
 function setDMValues(ob, property, value) {
     let obname = getObjectName(ob);
