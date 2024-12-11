@@ -21,7 +21,7 @@ There is no way to clear uploaded files from a *UploadFile* control programatica
 2. Add the input parameters below to the Global Script
    1. UploadFileControlClass
 3. Drag a *JavaScript* action into the script
-4. Add the Javascript below into the JavaScript code property
+4. Add the Javascript below unchanged into the JavaScript code property
 ```javascript
 /* Stadium Script v1.1 https://github.com/stadium-software/utils-clear-upload-file-control */
 let scope = this;
