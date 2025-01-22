@@ -1,6 +1,6 @@
 # Clear UploadFile Control Files <!-- omit in toc -->
 
-There is no way to clear uploaded files from a *UploadFile* control programatically. The script below allows you to accompish this in a script or event handler. 
+There is no way to clear uploaded files from a *UploadFile* control programatically. The script below allows you to accomplish this in a script or event handler. 
 
 ![](images/view.gif)
 
